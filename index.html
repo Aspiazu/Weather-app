@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather app</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="Src/style.css" />
+    <script
+      src="https://kit.fontawesome.com/d55dd7843f.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="container">
+      <form action="">
+        <div class="row">
+          <div class="col-2">
+            <input
+              type="submit"
+              class="submit-button"
+              value="Search"
+              id="submit-button"
+            />
+          </div>
+          <div class="col-8">
+            <input
+              type="text"
+              class="enter-city"
+              placeholder="Enter a city"
+              id="entered-city"
+            />
+          </div>
+          <div class="col-2">
+            <input
+              type="button"
+              class="current-city"
+              value="Current city"
+              id="current-city-button"
+            />
+          </div>
+        </div>
+      </form>
+
+      <div class="row main-weather">
+        <div class="col-sm date-today">
+          <span id="current-date">12 July 2020</span> <br />
+          <small class="local-time" id="current-hour">16:44</small>
+        </div>
+        <div class="col-sm">
+          <i class="fas fa-cloud-sun emoji-today"></i>
+        </div>
+        <div class="col-sm data-today">
+          <div id="city">Bilbao</div>
+          <br />
+          <div class="temp" id="current-temp">22º</div>
+          <small class="small" id="current-min-max-temp"> 16º / 24º </small>
+          <br />
+          <button class="celsius" id="c-button">Cº</button>
+          <button class="farenheit" id="f-button">Fº</button>
+        </div>
+      </div>
+
+      <div class="row day1-weather">
+        <div class="col-4 week-day">
+          13 July 2020 - Monday
+        </div>
+        <div class="col-6 day1-info">
+          16º / 27º
+        </div>
+        <div class="col-2 day1-emoji">
+          <i class="fas fa-sun"></i>
+        </div>
+      </div>
+
+      <div class="row day2-weather">
+        <div class="col-4 week-day">
+          14 July 2020 - Tuesday
+        </div>
+        <div class="col-6 day2-info">
+          15º / 27º
+        </div>
+        <div class="col-2 day2-emoji">
+          <i class="fas fa-sun"></i>
+        </div>
+      </div>
+
+      <div class="row day3-weather">
+        <div class="col-4 week-day">
+          15 July 2020 - Wednesday
+        </div>
+        <div class="col-6 day3-info">
+          16º / 24º
+        </div>
+        <div class="col-2 day3-emoji">
+          <i class="fas fa-sun"></i>
+        </div>
+      </div>
+
+      <div class="row day4-weather">
+        <div class="col-4 week-day">
+          16 July 2020 - Thursday
+        </div>
+        <div class="col-6 day4-info">
+          16º / 23º
+        </div>
+        <div class="col-2 day4-emoji">
+          <i class="fas fa-bolt"></i>
+        </div>
+      </div>
+
+      <div class="row day5-weather">
+        <div class="col-4 week-day">
+          17 July 2020 - Friday
+        </div>
+        <div class="col-6 day5-info">
+          15º / 25º
+        </div>
+        <div class="col-2 day5-emoji">
+          <i class="fas fa-cloud"></i>
+        </div>
+      </div>
+    </div>
+    <script src="src/app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,146 @@
+.container {
+  margin: 30px auto;
+  padding: 30px 50px;
+  max-width: 750px;
+  border: solid 1px rgba(244, 249, 244);
+  border-radius: 10px;
+  background-color: rgb(244, 249, 244);
+  font-family: "Amatic SC", cursive;
+}
+
+.col-2 {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  padding: 0px;
+  margin: 0px;
+}
+
+.submit-button {
+  padding: 4px 16px;
+  width: 100%;
+  color: #616161;
+  background-color: rgb(196, 227, 203);
+  border: solid 1px;
+}
+
+.col-10 {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  padding: 0px;
+  margin: 0px;
+}
+
+.enter-city {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  padding: 4px 16px;
+  width: 100%;
+  color: #616161;
+  border: solid 1px;
+}
+
+.current-city {
+  padding: 4px 16px;
+  width: 100%;
+  color: #616161;
+  background-color: rgb(196, 227, 203);
+  border: solid 1px;
+}
+
+.main-weather {
+  background-color: rgb(196, 227, 203);
+  margin: 40px 20px;
+  padding: 10px 0px;
+  border: solid 1px rgb(132, 172, 141);
+  border-radius: 5px;
+  transition: 500ms ease-in-out;
+}
+
+.main-weather:hover {
+  margin: 40px 35px;
+}
+
+.date-today {
+  font-size: 30px;
+  line-height: 30px;
+  font-weight: bold;
+  margin: 15px 0px 10px 0px;
+}
+
+.local-time {
+  font-size: 25px;
+}
+
+.emoji-today {
+  font-size: 100px;
+  margin: 50px 5px;
+  text-align: center;
+  color: black;
+}
+
+.data-today {
+  font-size: 45px;
+  line-height: 40px;
+  text-align: center;
+  font-weight: bold;
+  margin: 30px 0px 30px;
+}
+
+.temp {
+  display: inline;
+  margin: 0px auto;
+}
+
+.small {
+  font-size: 30px;
+  margin: 0px auto;
+}
+
+.celsius,
+.farenheit {
+  opacity: 80%;
+  background-color: transparent;
+  font-size: 30px;
+  padding: 0px auto 0px;
+  margin: 35px auto 0px;
+  border-color: white;
+}
+
+.day1-weather,
+.day2-weather,
+.day3-weather,
+.day4-weather,
+.day5-weather {
+  background-color: rgb(196, 227, 203);
+  font-weight: bold;
+  font-size: 30px;
+  border: solid 10px rgb(244, 249, 244);
+  border-radius: 10px;
+}
+
+.week-day {
+  margin: 5px auto;
+  padding: 15px 0px;
+  text-align: center;
+  font-size: 25px;
+}
+
+.day1-info,
+.day2-info,
+.day3-info,
+.day4-info,
+.day5-info {
+  margin: 5px auto;
+  padding: 15px 10px;
+  text-align: right;
+}
+
+.day1-emoji,
+.day2-emoji,
+.day3-emoji,
+.day4-emoji,
+.day5-emoji {
+  margin: 5px auto;
+  padding: 15px 10px;
+}
+
+.fas {
+  color: #616161;
+}
