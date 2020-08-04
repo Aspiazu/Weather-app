@@ -144,3 +144,10 @@
 .fas {
   color: #616161;
 }
+
+.footer {
+  font-family: "Amatic SC", cursive;
+  font-size: 30px;
+  margin: 25px;
+  text-align: left;
+}
