@@ -65,6 +65,10 @@ function showData(response) {
   let currenttemp = Math.round(response.data.main.temp);
   currenttemptext.innerHTML = `${currenttemp}ºC`;
 
+  celsiustemperature = response.data.main.temp;
+  celsiustemperaturemax = response.data.main.temp_max;
+  celsiustemperaturemin = response.data.main.temp_min;
+
   let currentminmaxtemptext = document.querySelector("#current-min-max-temp");
   let currenttempmin = Math.round(response.data.main.temp_min);
   let currenttempmax = Math.round(response.data.main.temp_max);
@@ -92,6 +96,10 @@ function showCurrentCityData(response) {
   let currenttemptext = document.querySelector("#current-temp");
   let currenttemp = Math.round(response.data.main.temp);
   currenttemptext.innerHTML = `${currenttemp}ºC`;
+
+  celsiustemperature = response.data.main.temp;
+  celsiustemperaturemax = response.data.main.temp_max;
+  celsiustemperaturemin = response.data.main.temp_min;
 
   let currentminmaxtemptext = document.querySelector("#current-min-max-temp");
 
@@ -131,15 +139,35 @@ currentcitybutton.addEventListener("click", getCurrentCity);
 
 // Change to Cº or Fº
 
-// let cbutton = document.querySelector("#c-button");
-// cbutton.addEventListener("click", showData);
+let celsiustemperature = null;
+let celsiustemperaturemax = null;
+let celsiustemperaturemin = null;
 
-// function changeFarenh() {
-// let currenttemp = document.querySelector("#current-temp");
-// currenttemp.innerHTML = "72º";
-// let currentminmaxtemp = document.querySelector("#current-min-max-temp");
-// currentminmaxtemp.innerHTML = "61º / 75º";
-//}
+function changeFarenh() {
+  let currenttemp = document.querySelector("#current-temp");
+  let farenheittemp = (celsiustemperature * 9) / 5 + 32;
+  currenttemp.innerHTML = `${Math.round(farenheittemp)}ºF`;
 
-//let fbutton = document.querySelector("#f-button");
-//fbutton.addEventListener("click", changeFarenh);
+  let currenttempmaxmin = document.querySelector("#current-min-max-temp");
+  let farenheittempmax = (celsiustemperaturemax * 9) / 5 + 32;
+  let farenheittempmin = (celsiustemperaturemin * 9) / 5 + 32;
+  currenttempmaxmin.innerHTML = `${Math.round(
+    farenheittempmin
+  )}ºF / ${Math.round(farenheittempmax)}ºF`;
+}
+
+function changeCelsius() {
+  let currenttemp = document.querySelector("#current-temp");
+  currenttemp.innerHTML = `${Math.round(celsiustemperature)}ºC`;
+
+  let currenttempmaxmin = document.querySelector("#current-min-max-temp");
+  currenttempmaxmin.innerHTML = `${Math.round(
+    celsiustemperaturemin
+  )}ºC / ${Math.round(celsiustemperaturemax)}ºC`;
+}
+
+let fbutton = document.querySelector("#f-button");
+fbutton.addEventListener("click", changeFarenh);
+
+let cbutton = document.querySelector("#c-button");
+cbutton.addEventListener("click", changeCelsius);
