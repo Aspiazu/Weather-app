@@ -25,10 +25,19 @@ let currentdate = document.querySelector("#current-date");
 currentdate.innerHTML = `${date} ${month} ${year}`;
 
 let currenthour = document.querySelector("#current-hour");
-if ((minutes < 10) & (hour < 10)) {
-  currenthour.innerHTML = `0${hour}:0${minutes}`;
-} else {
+
+if ((hour > 10) & (minutes > 10)) {
   currenthour.innerHTML = `${hour}:${minutes}`;
+} else {
+  if ((hour < 10) & (minutes > 10)) {
+    currenthour.innerHTML = `0${hour}:${minutes}`;
+  } else {
+    if ((hour > 10) & (minutes < 10)) {
+      currenthour.innerHTML = `${hour}:0${minutes}`;
+    } else {
+      currenthour.innerHTML = `0${hour}:0${minutes}`;
+    }
+  }
 }
 
 // Display current temp of the city
@@ -117,5 +126,3 @@ function getCurrentCity(event) {
 
 let currentcitybutton = document.querySelector("#current-city-button");
 currentcitybutton.addEventListener("click", getCurrentCity);
-
-// 5 days forecast
