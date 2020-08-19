@@ -55,6 +55,12 @@ function showCurrentData(event) {
 }
 
 function showData(response) {
+  let descriptiontext = document.querySelector("#description");
+  let currentdescription = response.data.weather[0].description;
+  descriptiontext.innerHTML = `${currentdescription}`;
+
+  console.log(response.data.weather[0].description);
+
   let currenttemptext = document.querySelector("#current-temp");
   let currenttemp = Math.round(response.data.main.temp);
   currenttemptext.innerHTML = `${currenttemp}ºC`;
@@ -76,24 +82,13 @@ function showData(response) {
 let form = document.querySelector("form");
 form.addEventListener("submit", showCurrentData);
 
-// Change to Cº or Fº
-
-// let cbutton = document.querySelector("#c-button");
-// cbutton.addEventListener("click", showData);
-
-// function changeFarenh() {
-// let currenttemp = document.querySelector("#current-temp");
-// currenttemp.innerHTML = "72º";
-// let currentminmaxtemp = document.querySelector("#current-min-max-temp");
-// currentminmaxtemp.innerHTML = "61º / 75º";
-//}
-
-//let fbutton = document.querySelector("#f-button");
-//fbutton.addEventListener("click", changeFarenh);
-
 // Current city button
 
 function showCurrentCityData(response) {
+  let descriptiontext = document.querySelector("#description");
+  let currentdescription = response.data.weather[0].description;
+  descriptiontext.innerHTML = `${currentdescription}`;
+
   let currenttemptext = document.querySelector("#current-temp");
   let currenttemp = Math.round(response.data.main.temp);
   currenttemptext.innerHTML = `${currenttemp}ºC`;
@@ -133,3 +128,18 @@ function getCurrentCity(event) {
 
 let currentcitybutton = document.querySelector("#current-city-button");
 currentcitybutton.addEventListener("click", getCurrentCity);
+
+// Change to Cº or Fº
+
+// let cbutton = document.querySelector("#c-button");
+// cbutton.addEventListener("click", showData);
+
+// function changeFarenh() {
+// let currenttemp = document.querySelector("#current-temp");
+// currenttemp.innerHTML = "72º";
+// let currentminmaxtemp = document.querySelector("#current-min-max-temp");
+// currentminmaxtemp.innerHTML = "61º / 75º";
+//}
+
+//let fbutton = document.querySelector("#f-button");
+//fbutton.addEventListener("click", changeFarenh);
