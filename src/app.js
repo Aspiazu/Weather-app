@@ -52,14 +52,6 @@ function showCurrentData(event) {
 
   let currentcity = document.querySelector("#city");
   currentcity.innerHTML = `${input.value}`;
-
-  let apiUrlForecast = `https://api.openweathermap.org/data/2.5/forecast/daily?q=${input.value}&appid=${apiKey}&units=metric&cnt=5`;
-
-  axios.get(`${apiUrlForecast}`).then(showForecast);
-}
-
-function showForecast(response) {
-  console.log(response[1].forecast);
 }
 
 function showData(response) {
@@ -68,10 +60,17 @@ function showData(response) {
   currenttemptext.innerHTML = `${currenttemp}ºC`;
 
   let currentminmaxtemptext = document.querySelector("#current-min-max-temp");
-
   let currenttempmin = Math.round(response.data.main.temp_min);
   let currenttempmax = Math.round(response.data.main.temp_max);
   currentminmaxtemptext.innerHTML = `${currenttempmin}ºC / ${currenttempmax}ºC`;
+
+  let humiditytext = document.querySelector("#humidity");
+  let currenthumidity = response.data.main.humidity;
+  humiditytext.innerHTML = `Humidity: ${currenthumidity}%`;
+
+  let windspeedtext = document.querySelector("#wind");
+  let currentwind = response.data.wind.speed;
+  windspeedtext.innerHTML = `Wind: ${currentwind} km/h`;
 }
 
 let form = document.querySelector("form");
@@ -107,6 +106,14 @@ function showCurrentCityData(response) {
 
   let currentcity = document.querySelector("#city");
   currentcity.innerHTML = `${response.data.name}`;
+
+  let humiditytext = document.querySelector("#humidity");
+  let currenthumidity = response.data.main.humidity;
+  humiditytext.innerHTML = `Humidity: ${currenthumidity}%`;
+
+  let windspeedtext = document.querySelector("#wind");
+  let currentwind = response.data.wind.speed;
+  windspeedtext.innerHTML = `Wind: ${currentwind} km/h`;
 }
 
 function showPosition(position) {
