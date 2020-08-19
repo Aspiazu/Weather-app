@@ -55,6 +55,12 @@ function showCurrentData(event) {
 }
 
 function showData(response) {
+  let currentemoji = document.querySelector("#current-emoji");
+  currentemoji.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+
   let descriptiontext = document.querySelector("#description");
   let currentdescription = response.data.weather[0].description;
   descriptiontext.innerHTML = `${currentdescription}`;
@@ -89,6 +95,12 @@ form.addEventListener("submit", showCurrentData);
 // Current city button
 
 function showCurrentCityData(response) {
+  let currentemoji = document.querySelector("#current-emoji");
+  currentemoji.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+
   let descriptiontext = document.querySelector("#description");
   let currentdescription = response.data.weather[0].description;
   descriptiontext.innerHTML = `${currentdescription}`;
