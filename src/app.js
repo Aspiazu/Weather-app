@@ -43,6 +43,14 @@ function showCurrentData(event) {
 
   let currentcity = document.querySelector("#city");
   currentcity.innerHTML = `${input.value}`;
+
+  let apiUrlForecast = `https://api.openweathermap.org/data/2.5/forecast/daily?q=${input.value}&appid=${apiKey}&units=metric&cnt=5`;
+
+  axios.get(`${apiUrlForecast}`).then(showForecast);
+}
+
+function showForecast(response) {
+  console.log(response[1].forecast);
 }
 
 function showData(response) {
@@ -109,3 +117,5 @@ function getCurrentCity(event) {
 
 let currentcitybutton = document.querySelector("#current-city-button");
 currentcitybutton.addEventListener("click", getCurrentCity);
+
+// 5 days forecast

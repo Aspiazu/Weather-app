@@ -70,9 +70,14 @@
 
 .emoji-today {
   font-size: 100px;
-  margin: 50px 5px;
+  margin: 50px auto 10px;
   text-align: center;
   color: black;
+}
+
+.description {
+  font-size: 28px;
+  text-align: center;
 }
 
 .data-today {
@@ -91,6 +96,16 @@
 .small {
   font-size: 30px;
   margin: 0px auto;
+}
+
+.humidity {
+  margin: 20px auto 0px;
+  font-size: 20px;
+}
+
+.wind {
+  margin: 0px auto 10px;
+  font-size: 20px;
 }
 
 .celsius,
@@ -147,7 +162,7 @@
 
 .footer {
   font-family: "Amatic SC", cursive;
-  font-size: 30px;
+  font-size: 28px;
   margin: 25px;
   text-align: left;
 }
