@@ -52,6 +52,13 @@ function showCurrentData(event) {
 
   let currentcity = document.querySelector("#city");
   currentcity.innerHTML = `${input.value}`;
+
+  apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${input.value}&appid=${apiKey}&units=metric`;
+  axios.get(`${apiUrl}`).then(showForecast);
+}
+
+function showForecast(response) {
+  console.log(response.data.list[0]);
 }
 
 function showData(response) {
@@ -64,8 +71,6 @@ function showData(response) {
   let descriptiontext = document.querySelector("#description");
   let currentdescription = response.data.weather[0].description;
   descriptiontext.innerHTML = `${currentdescription}`;
-
-  console.log(response.data.weather[0].description);
 
   let currenttemptext = document.querySelector("#current-temp");
   let currenttemp = Math.round(response.data.main.temp);
