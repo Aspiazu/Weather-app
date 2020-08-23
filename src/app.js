@@ -40,6 +40,53 @@ if ((hour > 10) & (minutes > 10)) {
   }
 }
 
+// Display Bilbao weather
+
+function showBilbao() {
+  let apiKey = "8cd67b9d5fe5dc5ff225fe7c46c974dd";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=Bilbao&appid=${apiKey}&units=metric`;
+
+  axios.get(`${apiUrl}`).then(showBilbaoData);
+
+  let currentcity = document.querySelector("#city");
+  currentcity.innerHTML = `Bilbao`;
+}
+
+function showBilbaoData(response) {
+  let currentemoji = document.querySelector("#current-emoji");
+  currentemoji.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+
+  let descriptiontext = document.querySelector("#description");
+  let currentdescription = response.data.weather[0].description;
+  descriptiontext.innerHTML = `${currentdescription}`;
+
+  let currenttemptext = document.querySelector("#current-temp");
+  let currenttemp = Math.round(response.data.main.temp);
+  currenttemptext.innerHTML = `${currenttemp}ºC`;
+
+  celsiustemperature = response.data.main.temp;
+  celsiustemperaturemax = response.data.main.temp_max;
+  celsiustemperaturemin = response.data.main.temp_min;
+
+  let currentminmaxtemptext = document.querySelector("#current-min-max-temp");
+  let currenttempmin = Math.round(response.data.main.temp_min);
+  let currenttempmax = Math.round(response.data.main.temp_max);
+  currentminmaxtemptext.innerHTML = `${currenttempmin}ºC / ${currenttempmax}ºC`;
+
+  let humiditytext = document.querySelector("#humidity");
+  let currenthumidity = response.data.main.humidity;
+  humiditytext.innerHTML = `Humidity: ${currenthumidity}%`;
+
+  let windspeedtext = document.querySelector("#wind");
+  let currentwind = response.data.wind.speed;
+  windspeedtext.innerHTML = `Wind: ${currentwind} km/h`;
+}
+
+showBilbao();
+
 // Display current temp of the city
 
 function showCurrentData(event) {
